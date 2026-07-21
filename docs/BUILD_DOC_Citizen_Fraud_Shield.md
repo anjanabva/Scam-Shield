@@ -30,7 +30,6 @@ A two-part system that (1) detects an active digital arrest / fraud scam in near
 - Detect digital arrest / financial fraud scam patterns from **text** (call transcripts, WhatsApp/SMS messages, email)
 - Provide a **risk score + verdict + explanation** (which red flags triggered it, which known pattern it matches)
 - Provide a **guided next-step flow** (block, report to NCRB 1930/cybercrime.gov.in, don't transfer money, verify via official channel)
-- Support **regional language input/output** for at least 2-3 Indian languages
 - Ship a working demo: chat interface + backend classifier + a curated scam-pattern knowledge base
 
 ### Stretch Goals (only if MVP is fully done early)
@@ -101,8 +100,8 @@ A two-part system that (1) detects an active digital arrest / fraud scam in near
 ```
 ┌─────────────────┐      ┌──────────────────────┐      ┌───────────────────┐
 │   Web Chat UI    │─────▶│   FastAPI Backend      │─────▶│  LLM                │
-│ (React+Tailwind  │◀─────│  (classification +     │◀─────│  gpt-5.4-mini       │
-│  or Streamlit)   │      │   RAG orchestration)    │      │  (OpenAI API)       │
+│  (React + Vite)  │◀─────│  (classification +     │◀─────│  gpt-5.4-mini       │
+│                  │      │   RAG orchestration)    │      │  (OpenAI API)       │
 └─────────────────┘      └──────────┬────────────┘      └───────────────────┘
                                      │
                     ┌────────────────┼────────────────┐
@@ -131,7 +130,7 @@ The **campaign log + clustering** component reuses the same embeddings computed 
 | **Embeddings (RAG)** | `sentence-transformers` (`all-MiniLM-L6-v2`) — runs locally, no API | Free, fast, good enough for a 50-80 entry corpus |
 | **Vector store** | **ChromaDB** (local, in-memory or on-disk) | Free, zero setup, pure Python |
 | **Backend** | **FastAPI** + Python | Fast to build, great docs |
-| **Frontend** | **React + Tailwind**, or **Streamlit/Gradio** for speed | Recommended: start with Streamlit/Gradio calling `classifier.py` directly — skip the separate API layer unless you have time left over |
+| **Frontend** | **React + Vite** (Tailwind CSS via `@tailwindcss/vite` plugin) | Recommended: start with Streamlit/Gradio calling `classifier.py` directly — skip the separate API layer unless you have time left over |
 | **Language detection/translation** | `langdetect` (free) + let the LLM handle translation directly via prompt (simplest, avoids a separate translation API) | Avoids paid translation dependency |
 | **Speech-to-text (stretch)** | OpenAI Whisper (open-source, local) or `faster-whisper` | Free, no API key, fine for short clips |
 | **Hosting (demo)** | Run locally on the presenting laptop — safest for a live demo. Vercel/Render free tiers as backup if you want a shareable link | No cost, no key required, avoids live-demo network risk |
@@ -143,8 +142,8 @@ The **campaign log + clustering** component reuses the same embeddings computed 
 ## 7. Project Structure
 
 ```
-citizen-fraud-shield/
-├── backend/
+Scam-Shield/
+├── backend/                      # (to be scaffolded)
 │   ├── main.py                  # FastAPI app entrypoint
 │   ├── config.py                # env vars, model config, token budget settings
 │   ├── requirements.txt
@@ -161,14 +160,11 @@ citizen-fraud-shield/
 │   │   └── ingest.py             # one-time script: load scam_corpus.json into Chroma
 │   │
 │   ├── intelligence/
-│   │   ├── campaign_log.py       # writes anonymized submissions (any user) to a persistent, shared ChromaDB collection
+│   │   ├── campaign_log.py       # writes anonymized submissions to a persistent, shared ChromaDB collection
 │   │   └── clustering.py         # queries across ALL users' recent submissions — flags emerging campaigns
 │   │
 │   ├── llm/
 │   │   └── openai_client.py      # gpt-5.4-mini wrapper + token-usage logging
-│   │
-│   ├── language/
-│   │   └── translate.py          # langdetect + LLM-based translation for regional lang
 │   │
 │   ├── data/
 │   │   └── scam_corpus.json      # curated scam pattern entries (see Section 8)
@@ -176,17 +172,21 @@ citizen-fraud-shield/
 │   └── api/
 │       └── routes.py             # POST /analyze, POST /followup, GET /health
 │
-├── frontend/                     # React+Tailwind (or collapse into a single app.py — see note)
-│   ├── src/
-│   │   ├── App.jsx
-│   │   ├── components/
-│   │   │   ├── ChatWindow.jsx
-│   │   │   ├── VerdictCard.jsx   # shows SCAM/SUSPICIOUS/SAFE + red flags + matched pattern
-│   │   │   ├── ActionButtons.jsx # "Report to NCRB", "Block & Save Evidence"
-│   │   │   └── LanguageToggle.jsx
-│   │   └── api/client.js         # calls backend /analyze
+├── frontend/                     # React + Vite (Tailwind via @tailwindcss/vite plugin)
+│   ├── index.html
 │   ├── package.json
-│   └── tailwind.config.js
+│   ├── vite.config.js
+│   ├── eslint.config.js
+│   └── src/
+│       ├── main.jsx              # React root mount
+│       ├── App.jsx               # layout shell + shared state (messages, verdict, loading)
+│       ├── index.css             # global styles / Tailwind directives
+│       ├── components/
+│       │   ├── ChatWindow.jsx    # multi-turn chat input + message history
+│       │   ├── VerdictCard.jsx   # shows SCAM/SUSPICIOUS/SAFE + red flags + matched pattern
+│       │   └── ActionButtons.jsx # "Report to NCRB", "Block & Save Evidence"
+│       └── api/
+│           └── client.js         # calls backend /analyze and /followup
 │
 ├── dashboard/
 │   ├── pattern_stats.py          # simple charts on scam_corpus.json (stretch)
@@ -279,8 +279,8 @@ Also prepare to speak to the official Evaluation Focus areas: detection precisio
 |---|---|---|
 | Hour 0–3 | Compile `scam_corpus.json` per Section 8 strategy | `data/scam_corpus.json` |
 | Hour 3–4 | Write 5-8 realistic demo transcripts + 1 deliberately-outside-corpus edge case | `docs/demo_script.md` |
-| Hour 4–8 | Build chat UI (Streamlit/Gradio first, or React if time allows) | `frontend/` or `app.py` |
-| Hour 8–10 | Add language detect + toggle, wire LLM translation for Hindi + one more | `language/translate.py` |
+| Hour 4–8 | Build React UI components: `ChatWindow`, `VerdictCard`, `ActionButtons`; wire `api/client.js` to backend | `frontend/src/components/`, `frontend/src/api/client.js` |
+| Hour 8–10 | Integrate components into `App.jsx`, end-to-end smoke test with backend | `frontend/src/App.jsx` |
 | Hour 10–11.5 | Build the trending-campaigns panel UI (consumes `/trending` from Person A) | `dashboard/trending_campaigns.py` |
 | Hour 11.5–12 | Architecture diagram, pitch deck, demo video script | `docs/`, deck |
 
@@ -296,7 +296,7 @@ Also prepare to speak to the official Evaluation Focus areas: detection precisio
 
 1. Paste a realistic "CBI digital arrest" transcript → instant SCAM verdict with red flags highlighted and explanation citing the matched known pattern
 2. Paste a legitimate courier delivery message → LIKELY_SAFE verdict, demonstrating low false-positive behavior
-3. Ask a follow-up in Hindi ("mujhe ab kya karna chahiye?") → response in Hindi with NCRB reporting guidance
+3. Ask a follow-up question in the chat ("What should I do now?") → guided response with NCRB reporting steps
 4. Paste the deliberately outside-corpus edge case → still correctly flagged, demonstrating the system isn't overfit to its own dataset
 5. **Paste 3-4 pre-seeded similar "fake customs officer" transcripts in quick succession, then show the trending-campaigns panel light up** — *"6 similar scripts detected in the last 2 hours"* — this is the moment that directly demonstrates the predictive layer, not just per-message detection. Say explicitly: *"Every citizen interaction is a sensor. Individually we react to a message. Collectively, we're seeing a campaign scale in real time — that's the predictive piece the problem statement asks for."*
 6. (If further stretch built) Show the broader pattern dashboard as the full "law enforcement view"
