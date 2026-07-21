@@ -86,7 +86,7 @@ A two-part system that (1) detects an active digital arrest / fraud scam in near
 - **Why this exists:** the problem statement explicitly asks for "predictive threat neutralisation," not just per-message detection. A citizen pasting one transcript and getting a verdict is still reactive at the individual level. This feature turns every citizen interaction, **across all users**, into a sensor for the aggregate system.
 - **Critical design point — this is cross-user, not per-session.** One person's message means nothing on its own. The signal only exists in aggregate: if 6 *different* citizens submit similar scripts within a short window, that's a live campaign. The clustering query must look across the entire shared submission log, not scope to a session or user ID. Do not architect this as per-user history — it defeats the purpose.
 - **How it works:** every classified transcript is logged (anonymized — no PII, no user-identifying data beyond a random non-reversible submission ID) along with its embedding (already computed for RAG), scam type, red flags, and a timestamp, into a **persistent, shared store** — see storage note below. A similarity check runs against all recent submissions in a time window, regardless of which user submitted them.
-- **Storage:** a second ChromaDB collection (`campaign_submissions`), persisted to disk (not in-memory) — reuses the same embedding pipeline as RAG, and Chroma's similarity search does the clustering natively. On-disk persistence matters here specifically because the log has to survive across many separate requests from many different users/sessions over the course of the demo, not just live within one running process by luck.
+- **Storage:** a second Pinecone index (`campaign_submissions`), or a namespace — reuses the same OpenAI embedding pipeline as RAG, and Pinecone's similarity search does the clustering natively. Cloud persistence matters here specifically because the log has to survive across many separate requests from many different users/sessions over the course of the demo, not just live within one running process by luck.
 - **Trigger logic:** if N similar transcripts (same fake agency name, same script structure, high embedding similarity) appear across submissions within a short window, the system flags an **active emerging campaign** — a scam operation scaling right now, before most of its victims have been hit.
 - **Output:** a small "trending campaigns" panel — e.g. *"6 similar 'fake customs officer' scripts detected from different reporters in the last 2 hours"* — surfaced to the citizen-facing UI and framed in the pitch as the law-enforcement-facing view.
 - **This is the direct answer to "how is this predictive"** — individually the system reacts to an incoming message; collectively, clustering signals across many citizens lets it surface a scaling campaign before hundreds more victims are hit. Frame this explicitly in the pitch narrative (Section 11).
@@ -116,19 +116,19 @@ A two-part system that (1) detects an active digital arrest / fraud scam in near
                               ┌───────────────────────┐
                               │  Scam corpus            │
                               │  scam_corpus.json in    │
-                              │  ChromaDB               │
+                              │  Pinecone               │
                               └───────────────────────┘
 ```
 
-The **campaign log + clustering** component reuses the same embeddings computed for RAG — every classified transcript, from any user, is logged anonymized with its embedding into a persistent, shared ChromaDB collection, and a similarity check against recent submissions **across all users** in the same time window flags an emerging campaign. This is the piece that makes the platform predictive at the aggregate level, not just reactive per-message. See Section 5.6.
+The **campaign log + clustering** component reuses the same embeddings computed for RAG — every classified transcript, from any user, is logged anonymized with its embedding into a persistent, shared Pinecone index, and a similarity check against recent submissions **across all users** in the same time window flags an emerging campaign. This is the piece that makes the platform predictive at the aggregate level, not just reactive per-message. See Section 5.6.
 
 ### Component Table
 
 | Layer | Tool | Notes |
 |---|---|---|
 | **LLM inference** | **OpenAI `gpt-5.4-mini`** — budgeted to ~1.25M tokens/day (~50% of your 2.5M mini-tier daily quota), roughly 650-800 requests/day at ~1.5-2K tokens each | Strong enough for classification + RAG-grounded explanation. Never default any code path to the 250K/day big-model quota (gpt-5, gpt-4o, etc.) — keep that as manual emergency reserve only |
-| **Embeddings (RAG)** | `sentence-transformers` (`all-MiniLM-L6-v2`) — runs locally, no API | Free, fast, good enough for a 50-80 entry corpus |
-| **Vector store** | **ChromaDB** (local, in-memory or on-disk) | Free, zero setup, pure Python |
+| **Embeddings (RAG)** | **OpenAI API (`text-embedding-3-small`)** | High quality, 1536 dimensions |
+| **Vector store** | **Pinecone** (cloud managed) | Persistent storage, free Serverless tier |
 | **Backend** | **FastAPI** + Python | Fast to build, great docs |
 | **Frontend** | **React + Vite** (Tailwind CSS via `@tailwindcss/vite` plugin) | Recommended: start with Streamlit/Gradio calling `classifier.py` directly — skip the separate API layer unless you have time left over |
 | **Language detection/translation** | `langdetect` (free) + let the LLM handle translation directly via prompt (simplest, avoids a separate translation API) | Avoids paid translation dependency |
@@ -155,12 +155,12 @@ Scam-Shield/
 │   │   └── prompts.py            # prompt templates for verdict + explanation
 │   │
 │   ├── rag/
-│   │   ├── embed.py              # sentence-transformers embedding logic
-│   │   ├── vectorstore.py        # ChromaDB init + query
-│   │   └── ingest.py             # one-time script: load scam_corpus.json into Chroma
+│   │   ├── embed.py              # OpenAI API embedding logic
+│   │   ├── vectorstore.py        # Pinecone init + query
+│   │   └── ingest.py             # one-time script: load scam_corpus.json into Pinecone
 │   │
 │   ├── intelligence/
-│   │   ├── campaign_log.py       # writes anonymized submissions to a persistent, shared ChromaDB collection
+│   │   ├── campaign_log.py       # writes anonymized submissions to a persistent, shared Pinecone namespace
 │   │   └── clustering.py         # queries across ALL users' recent submissions — flags emerging campaigns
 │   │
 │   ├── llm/
@@ -268,7 +268,7 @@ Also prepare to speak to the official Evaluation Focus areas: detection precisio
 |---|---|---|
 | Hour 0–2 | Set up OpenAI API key, test `gpt-5.4-mini`, wire up token-usage logging | `llm/openai_client.py` |
 | Hour 2–5 | Build rule-based red-flag engine | `detection/rules.py` |
-| Hour 5–9 | Build RAG pipeline: embed corpus, Chroma setup, retrieval-augmented prompt for verdict + explanation | `rag/embed.py`, `rag/vectorstore.py`, `detection/classifier.py`, `detection/prompts.py` |
+| Hour 5–9 | Build RAG pipeline: embed corpus, Pinecone setup, retrieval-augmented prompt for verdict + explanation | `rag/embed.py`, `rag/vectorstore.py`, `detection/classifier.py`, `detection/prompts.py` |
 | Hour 9–11 | Wire up `/analyze` and `/followup` endpoints, test with sample transcripts | `api/routes.py`, `main.py` |
 | Hour 11–12.5 | Build campaign log + similarity clustering on top of existing embeddings; wire a `/trending` endpoint | `intelligence/campaign_log.py`, `intelligence/clustering.py` |
 | Buffer | Tune false-positive rate on safe messages (courier, real bank alerts) — highest-leverage tuning work | `detection/rules.py` |

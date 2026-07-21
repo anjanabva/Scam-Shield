@@ -1,0 +1,881 @@
+[
+    {
+        "id": "scam_001",
+        "type": "digital_arrest_cbi",
+        "title": "CBI/Police Digital Arrest — Fake Case Linked to Parcel or SIM Card",
+        "script_summary": "Caller claims to be a CBI or police officer investigating the victim over a parcel, SIM card, or bank account allegedly used in money laundering or drug trafficking. Victim is moved to a video call, shown a fake ID or arrest warrant, and told to stay on camera continuously without contacting family. Victim is pressured to transfer funds to a so-called 'RBI verification' or 'safe' account to prove innocence, with a promise of refund later.",
+        "red_flags": [
+            "impersonation of a central investigation or police agency",
+            "insists victim stay on video call, isolates from family",
+            "fake case number, ID card, or arrest warrant shown on screen",
+            "demands money transfer framed as 'verification' or 'safe custody'",
+            "false urgency and fear of real arrest"
+        ],
+        "source": "MHA/I4C advisory (Oct 2024); pattern consistent across multiple reported cases in 2024-2025",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_002",
+        "type": "digital_arrest_ed",
+        "title": "Fake Money Laundering Case — Enforcement Directorate Impersonation",
+        "script_summary": "Fraudster poses as an Enforcement Directorate official and tells the victim they are named in a money laundering case. The victim, often elderly, is kept under a multi-day 'digital arrest' via video call and coerced into repeatedly transferring large sums, sometimes liquidating fixed deposits, to demonstrate their funds are 'clean'.",
+        "red_flags": [
+            "impersonation of ED or financial crime agency",
+            "extended multi-day video confinement",
+            "repeated transfers rather than a single one-time payment",
+            "instructions to break fixed deposits or liquidate savings"
+        ],
+        "source": "Times of India — 77-year-old kept under digital arrest for a month, lost ₹3.8 crore (Nov 2024); Deccan Herald — Bengaluru woman under digital arrest 11 days, broke 3 FDs, paid ₹30 lakh (Dec 2024)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_003",
+        "type": "digital_arrest_fake_court_order",
+        "title": "Fake Supreme Court / Judicial Order Digital Arrest",
+        "script_summary": "Scammers present a forged Supreme Court or other judicial order on a video call to convince the victim that a real court has ordered their detention. Elderly victims are specifically targeted and confined virtually for extended periods, then extorted for large sums.",
+        "red_flags": [
+            "forged court order or judicial document shown as 'proof'",
+            "targets elderly or senior citizens specifically",
+            "extortion sums in the tens of lakhs or more",
+            "claims that a court has authorised a 'digital' detention (this does not exist in Indian law)"
+        ],
+        "source": "Reported case — 73-year-old woman from Ambala, forged Supreme Court order used to extort over ₹1 crore (case noted by the Supreme Court, Oct 2025)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_004",
+        "type": "digital_arrest_high_value_target",
+        "title": "High-Value Target Digital Arrest — Business Owners and Executives",
+        "script_summary": "Fraudsters specifically target business owners, executives, and public figures with fabricated cases, extracting extremely large sums within a very short window (often under 48 hours) by escalating pressure quickly before the victim can verify the claim independently.",
+        "red_flags": [
+            "targets known business owners or high-net-worth individuals",
+            "compressed timeline — pressure to pay within hours, not days",
+            "very large transfer amounts requested in a single sitting",
+            "caller discourages any independent verification or legal consultation"
+        ],
+        "source": "Reported cases — a Delhi couple defrauded of ₹14 crore; an industrialist defrauded of ₹7 crore within two days; a Bengaluru tech executive transferred ₹3.7 crore over 28 hours of digital custody (2024-2025 reporting)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_005",
+        "type": "courier_parcel_fedex",
+        "title": "FedEx/Courier Parcel Scam — Stage 1 Courier Impersonation",
+        "script_summary": "Caller identifies as a courier company representative (commonly FedEx) and claims a parcel sent in the victim's name was intercepted, containing drugs, expired passports, or banned items. Victim is told to press a key to speak to an 'officer' to resolve the matter, beginning the escalation into the fake law enforcement stage.",
+        "red_flags": [
+            "unsolicited courier company call about a parcel the victim never sent",
+            "parcel allegedly contains drugs, passports, or banned substances",
+            "instructs victim to press a number to be 'transferred' to an officer",
+            "parcel destination is often an unusual foreign country"
+        ],
+        "source": "Deccan Herald — multiple Bengaluru cases (2023-2024), IISc professor lost ₹83 lakh, Bengaluru techie lost ₹29.63 lakh; AOL/Yahoo — Mumbai comedian's account of the scam (Oct 2024)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_006",
+        "type": "courier_parcel_escalation",
+        "title": "FedEx/Courier Scam — Stage 2 Fake Police/Customs Escalation",
+        "script_summary": "After the courier-impersonation call, the victim is transferred to someone posing as a Mumbai/Delhi Cyber Cell, NCB, or Customs officer, often on a video call with a uniform and fake official backdrop. The victim is told they are under digital arrest and must transfer money for 'RBI verification' or to avoid prosecution under narcotics or money laundering law.",
+        "red_flags": [
+            "call escalates from courier company to 'police' or 'customs' officer",
+            "uniformed officer on video call with an official-looking backdrop",
+            "cites specific legal sections (e.g. NDPS Act, PMLA) to sound credible",
+            "demands transfer for 'RBI verification' or 'customs clearance'"
+        ],
+        "source": "Deccan Herald — Mumbai retired banker lost ₹1.6 crore, Hyderabad doctor lost ₹4.2 crore, Karnataka man lost ₹20 lakh, Bengaluru woman lost ₹4 lakh to Mumbai-police impersonation variant (2023-2024 reporting)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_007",
+        "type": "fake_job_offer_sextortion",
+        "title": "Fake Job Offer Leading to Sextortion",
+        "script_summary": "Scammer posts a fake job advertisement, often for a foreign bank or company, and contacts the victim via a chat app. Victim is lured into an online video interview where they are coerced into undressing or compromising acts, which are recorded. The recording is then used to blackmail the victim for money or further sexual demands.",
+        "red_flags": [
+            "unsolicited job offer via chat app rather than a verified job portal",
+            "interview conducted only over video call, never in person or via official channels",
+            "any request to remove clothing or perform acts on camera during an 'interview'",
+            "subsequent threats to release recorded material unless paid"
+        ],
+        "source": "Deccan Herald — Goa police arrest in a case involving a fake job ad and sextortion of a woman victim (reported case)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_008",
+        "type": "fake_loan_app_harassment",
+        "title": "Fake Loan App — Data Theft and Harassment Cycle",
+        "script_summary": "Victim downloads an unregulated loan app promising instant approval with no paperwork or credit checks. The app requests broad access to contacts, photos, and messages. After a small loan is disbursed, the victim faces short repayment windows, hidden fees, and — on any delay — harassment of themselves and their contacts using threats, morphed images, or public shaming.",
+        "red_flags": [
+            "loan approved instantly with no credit check or paperwork",
+            "app requests access to contacts, gallery, or SMS beyond what a loan requires",
+            "repayment window unusually short with steep hidden fees",
+            "harassment or threats to contacts using morphed or private images upon any delay"
+        ],
+        "source": "IDFC First Bank and industry advisories on fake loan app patterns (2024-2025); ED action against a large loan-app fraud network (2025 reporting)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_009",
+        "type": "fake_task_investment_fraud",
+        "title": "Task-Based 'Easy Money' Fraud",
+        "script_summary": "Victim is offered easy earnings for completing simple online 'tasks' (liking videos, rating products) via a chat app, with small initial payouts building trust. Victim is then asked to invest increasing amounts into a fake platform to unlock larger earnings, with funds ultimately non-recoverable.",
+        "red_flags": [
+            "unsolicited offer of paid 'tasks' via message or chat app",
+            "small real payouts early to build trust before larger investment is requested",
+            "requests for increasing up-front investment to 'unlock' bigger returns",
+            "platform or app has no verifiable registration or company details"
+        ],
+        "source": "Reported case — Navi Mumbai woman lost ₹24 lakh to task-based fraud (2025 reporting)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_010",
+        "type": "digital_arrest_variant_phrasing_a",
+        "title": "Digital Arrest Variant — 'Your Aadhaar Is Linked to a Crime'",
+        "script_summary": "Caller claims the victim's Aadhaar or mobile number has surfaced in the personal records of someone already arrested for a serious crime, and that the victim must 'cooperate' with a virtual investigation to clear their name.",
+        "red_flags": [
+            "claims Aadhaar/mobile number is linked to an unrelated criminal's case",
+            "frames itself as the victim needing to 'clear their name', not a real accusation",
+            "requests personal documents (Aadhaar, bank statements) over video call for 'verification'"
+        ],
+        "source": "Consistent phrasing pattern noted across multiple 2024 courier/digital-arrest case reports",
+        "is_synthetic": true
+    },
+    {
+        "id": "scam_011",
+        "type": "digital_arrest_variant_phrasing_b",
+        "title": "Digital Arrest Variant — Fake TRAI/Telecom SIM Deactivation Threat",
+        "script_summary": "Caller claims to be from TRAI or a telecom regulator, stating the victim's SIM will be deactivated within hours due to complaints of misuse linked to fraud, then transfers the call to a fake police officer who initiates the standard digital arrest script.",
+        "red_flags": [
+            "impersonation of a telecom regulator with a SIM deactivation threat",
+            "artificial time pressure (deactivation 'within hours')",
+            "call transferred to a second impersonator posing as law enforcement"
+        ],
+        "source": "Synthetic — modeled on widely reported TRAI-impersonation call patterns referenced in cybercrime awareness advisories",
+        "is_synthetic": true
+    },
+    {
+        "id": "scam_012",
+        "type": "safe_message_courier_real",
+        "title": "Legitimate Courier Notification (Safe Baseline Example)",
+        "script_summary": "A real courier delivery notification with a tracking number, expected delivery window, and no request for money, OTP, or personal verification — used as a baseline example of a legitimate message for contrast against scam patterns.",
+        "red_flags": [],
+        "source": "Composed for baseline/contrast testing — represents typical legitimate courier SMS format",
+        "is_synthetic": true
+    },
+    {
+        "id": "scam_013",
+        "type": "safe_message_bank_real",
+        "title": "Legitimate Bank Transaction Alert (Safe Baseline Example)",
+        "script_summary": "A standard bank SMS alert confirming a transaction the account holder made themselves, with no request for OTP, PIN, or a callback number — used as a baseline example to test for false positives.",
+        "red_flags": [],
+        "source": "Composed for baseline/contrast testing — represents typical legitimate bank SMS format",
+        "is_synthetic": true
+    },
+    {
+        "id": "scam_014",
+        "type": "fake_kyc_update",
+        "title": "Fake Bank KYC Update Call/SMS",
+        "script_summary": "Victim receives a call or SMS claiming their bank account or mobile wallet KYC has expired and will be frozen unless updated immediately. Victim is directed to click a link or share OTP/PIN to 'complete' the update, which actually hands account access to the fraudster.",
+        "red_flags": [
+            "urgent claim that KYC has expired and account will be frozen",
+            "link sent via SMS/WhatsApp asking for banking credentials",
+            "request for OTP, PIN, or CVV under the guise of 'verification'",
+            "caller pressures immediate action to avoid account freeze"
+        ],
+        "source": "RBI and bank advisories on recurring KYC-update phishing patterns (2023-2025)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_015",
+        "type": "fake_customs_duty_gift",
+        "title": "Fake International Gift/Parcel Customs Duty Scam",
+        "script_summary": "Victim is contacted (often after an online romance or social media friendship) and told a gift or parcel from abroad is held at customs, requiring payment of duty, taxes, or a 'release fee' before it can be delivered. No parcel exists; each payment triggers a request for a further fee.",
+        "red_flags": [
+            "unexpected notification of a gift/parcel from an unfamiliar international sender",
+            "repeated requests for additional fees (duty, tax, insurance) before release",
+            "payment demanded to personal accounts rather than official customs channels",
+            "sender is often an online acquaintance met through social media or dating apps"
+        ],
+        "source": "Pattern consistent with customs-fee variants of parcel scams reported alongside romance scam cases (2023-2025)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_016",
+        "type": "fake_electricity_disconnection",
+        "title": "Fake Electricity Bill Disconnection Threat",
+        "script_summary": "Caller or SMS claims the victim's electricity connection will be disconnected within hours due to an unpaid or 'not updated' bill, and instructs the victim to call a number or install an app to make an urgent payment, which is actually used to extract money or remote access.",
+        "red_flags": [
+            "threat of disconnection within a few hours",
+            "instructs installing a remote-access app to 'process' the payment",
+            "message sent from a personal number rather than the utility's official channel",
+            "urgency designed to prevent the victim from verifying with the utility directly"
+        ],
+        "source": "State electricity board and police cyber cell advisories (2023-2024) on recurring disconnection-threat SMS scams",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_017",
+        "type": "fake_income_tax_refund",
+        "title": "Fake Income Tax Refund Notification",
+        "script_summary": "Victim receives an email or SMS claiming a tax refund is pending and must be claimed by submitting bank details, PAN, and OTP through a fraudulent link resembling the Income Tax Department's website.",
+        "red_flags": [
+            "unsolicited refund notification with a request to submit bank details online",
+            "link domain resembles but does not match the official incometax.gov.in domain",
+            "request for OTP to 'authorize' refund crediting",
+            "urgency framed around a claim deadline"
+        ],
+        "source": "Income Tax Department public advisories on refund-phishing patterns (recurring each assessment year)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_018",
+        "type": "fake_upi_block_rbi",
+        "title": "Fake 'UPI/Account Will Be Blocked by RBI' Call",
+        "script_summary": "Caller claims to be from the bank or RBI and states the victim's UPI ID or bank account will be blocked due to a technical or compliance issue, then asks the victim to install a screen-sharing app or share OTP to 'reverse' the block.",
+        "red_flags": [
+            "impersonation of RBI, which does not contact individual account holders directly",
+            "request to install screen-sharing/remote-access apps",
+            "request for OTP or UPI PIN framed as 'unblocking' the account",
+            "unsolicited inbound call rather than the victim contacting official support"
+        ],
+        "source": "RBI public notices reiterating it never calls individuals for account verification (recurring advisory, 2023-2025)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_019",
+        "type": "sim_swap_fraud",
+        "title": "SIM Swap Fraud",
+        "script_summary": "Fraudster obtains the victim's personal details and requests a duplicate SIM from the telecom operator, sometimes with help from an insider or forged documents. Once the victim's original SIM is deactivated, the fraudster receives OTPs and banking alerts and empties linked accounts.",
+        "red_flags": [
+            "sudden and unexplained loss of mobile network signal",
+            "unsolicited SMS about a SIM swap or replacement request the victim did not initiate",
+            "immediately followed by unauthorized banking transactions",
+            "victim's original SIM stops receiving calls/texts without prior notice"
+        ],
+        "source": "Cybercrime cell advisories on SIM-swap fraud patterns (recurring, 2022-2025)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_020",
+        "type": "remote_access_app_scam",
+        "title": "Screen-Sharing / Remote Access App Scam (AnyDesk-style)",
+        "script_summary": "Fraudster, posing as bank, telecom, or tech support, persuades the victim to install a remote-access app under the pretext of 'fixing' an issue or 'processing' a refund. Once installed, the fraudster views the victim's screen live and captures banking credentials or initiates transactions directly.",
+        "red_flags": [
+            "any unsolicited request to install a remote-desktop/screen-sharing app",
+            "instruction to open banking apps while screen-sharing is active",
+            "framed as fixing a technical issue, refund, or 'verification'",
+            "caller stays on the line guiding every step of the install"
+        ],
+        "source": "Bank and RBI advisories specifically warning against installing remote-access apps on request of unknown callers (recurring, 2022-2025)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_021",
+        "type": "fake_tech_support",
+        "title": "Fake Tech Support Pop-up Scam",
+        "script_summary": "A pop-up appears on the victim's computer or phone claiming a virus has been detected and displaying a toll-free 'support' number. Calling the number connects to a fraudster who requests remote access and payment for fake 'cleanup' services, or steals financial information during the session.",
+        "red_flags": [
+            "unsolicited pop-up claiming a virus infection with an urgent call-to-action",
+            "toll-free number displayed directly in the pop-up rather than found independently",
+            "request for remote access to 'diagnose' the issue",
+            "demand for payment via gift cards or wire transfer for support services"
+        ],
+        "source": "Widely documented tech-support scam pattern reported by consumer protection agencies globally, including in India",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_022",
+        "type": "fake_reward_points_expiry",
+        "title": "Fake Credit Card Reward Points Expiry Scam",
+        "script_summary": "Victim receives a call or SMS claiming their credit card reward points are about to expire and can be redeemed for cash or gifts by clicking a link or sharing card details and OTP.",
+        "red_flags": [
+            "urgency around reward points expiring 'today' or 'in a few hours'",
+            "request for full card number, CVV, or OTP to 'redeem' points",
+            "link leads to a page mimicking the bank's redemption portal",
+            "unsolicited call/SMS rather than notification through the official banking app"
+        ],
+        "source": "Bank fraud-alert bulletins on reward-point phishing patterns (recurring, 2023-2025)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_023",
+        "type": "fake_insurance_renewal",
+        "title": "Fake Insurance Policy Renewal/Lapse Scam",
+        "script_summary": "Caller claims the victim's insurance policy (health, vehicle, or life) is about to lapse or has already lapsed, offering to 'renew' it immediately over the phone in exchange for payment to a personal account or a request for full policy and bank details.",
+        "red_flags": [
+            "unsolicited call claiming urgent policy lapse",
+            "payment requested to a personal UPI ID or account rather than the insurer's official channel",
+            "request for full policy number, Aadhaar, and bank details together",
+            "offers an unusually large 'bonus' or discount for immediate renewal"
+        ],
+        "source": "IRDAI and insurer advisories on policy-renewal impersonation scams (recurring, 2023-2025)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_024",
+        "type": "qr_code_scam",
+        "title": "QR Code 'Receive Payment' Scam",
+        "script_summary": "Fraudster, posing as a buyer on a classifieds app or a well-wisher, asks the victim to scan a QR code to 'receive' a payment or refund. Scanning a QR code and entering a UPI PIN actually authorizes an outgoing payment from the victim's account, not a deposit.",
+        "red_flags": [
+            "any claim that scanning a QR code or entering a UPI PIN is required to 'receive' money",
+            "pressure to scan quickly, often framed as a refund or advance payment",
+            "commonly initiated after contact through an online marketplace or classifieds listing",
+            "genuine incoming UPI payments never require entering a PIN"
+        ],
+        "source": "NPCI and bank advisories clarifying that receiving money via UPI never requires a PIN (recurring advisory, 2022-2025)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_025",
+        "type": "whatsapp_account_hijack",
+        "title": "WhatsApp/Telegram Account Hijack via OTP",
+        "script_summary": "Fraudster calls or messages the victim claiming to be from WhatsApp support, a delivery service, or a contact needing help, and asks the victim to share a verification code just received by SMS. The code is actually a WhatsApp registration OTP, letting the fraudster take over the victim's account and impersonate them to contacts.",
+        "red_flags": [
+            "any request to share a 6-digit code just received via SMS",
+            "caller claims to need the code to 'verify' something unrelated to WhatsApp",
+            "immediately followed by the account being used to message contacts for money",
+            "legitimate services never ask a user to read out an OTP over a call"
+        ],
+        "source": "Meta/WhatsApp safety advisories and recurring cybercrime cell alerts on OTP-sharing account takeovers (2022-2025)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_026",
+        "type": "fake_army_matrimonial",
+        "title": "Fake Army/Defence Personnel Matrimonial Scam",
+        "script_summary": "Fraudster creates a fake profile on a matrimonial or dating site posing as an armed forces officer, builds an online relationship, then claims to need money for leave approval, transport, or a medical emergency before they can meet in person.",
+        "red_flags": [
+            "claimed defence officer who cannot meet in person or video call consistently",
+            "requests for money framed around leave, posting transfer, or medical emergencies",
+            "asks for payment via wallet transfer or gift cards rather than official channels",
+            "profile photos and details cannot be independently verified through official defence channels"
+        ],
+        "source": "Indian Army public advisories on fake army-personnel profile scams (recurring, 2022-2025)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_027",
+        "type": "romance_scam_gift_stuck",
+        "title": "Online Romance Scam — Gift 'Stuck' at Customs",
+        "script_summary": "Fraudster builds a long-distance romantic relationship over months via chat and voice calls, eventually claiming to have sent an expensive gift or cash that is held up by customs, and asks the victim to pay release fees repeatedly.",
+        "red_flags": [
+            "romantic partner met only online, video calls are rare or always have technical excuses",
+            "eventually introduces a financial need tied to travel, customs, or an emergency",
+            "repeated escalating fee requests before any gift materializes",
+            "resistance to meeting in person or involving family/friends in the relationship"
+        ],
+        "source": "Consumer protection and cybercrime advisories on romance-scam patterns (recurring, globally and in India)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_028",
+        "type": "fake_lottery_kbc",
+        "title": "Fake Lottery / KBC Prize Winning Scam",
+        "script_summary": "Victim receives a call, SMS, or WhatsApp message claiming they have won a lottery or a TV game show prize (commonly invoking KBC), and must pay a 'processing fee', 'GST', or 'release charge' to claim the winnings.",
+        "red_flags": [
+            "notification of winning a lottery or contest the victim never entered",
+            "upfront fee required before any prize is released",
+            "invokes a well-known show or brand name to appear credible",
+            "payment requested to a personal account rather than any verifiable official body"
+        ],
+        "source": "Longstanding, widely reported lottery-scam pattern; repeatedly flagged by Indian cybercrime cells and telecom operators",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_029",
+        "type": "ponzi_chit_fund",
+        "title": "Ponzi / Unregistered Chit Fund Investment Scam",
+        "script_summary": "Victim is invited to invest in a scheme promising unusually high, fixed monthly returns, often through local agents or community networks. Early investors are paid from new investors' contributions until the scheme collapses, leaving most investors with total losses.",
+        "red_flags": [
+            "guaranteed high fixed returns significantly above market rates",
+            "recruitment-style structure where investors are rewarded for bringing in new investors",
+            "scheme not registered with SEBI, RBI, or relevant regulatory body",
+            "pressure to reinvest returns rather than withdraw them"
+        ],
+        "source": "SEBI and RBI recurring public advisories on Ponzi and unregistered collective-investment schemes",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_030",
+        "type": "fake_crypto_trading_app",
+        "title": "Fake Cryptocurrency Trading App Investment Scam",
+        "script_summary": "Victim is introduced (often via social media or a dating app contact) to a cryptocurrency trading app showing consistently rising fake profits on a dashboard. Victim deposits increasing amounts to 'unlock' withdrawals, which are then blocked or subject to further fake fees, and the app eventually disappears.",
+        "red_flags": [
+            "trading app not listed on official app stores or lacking verifiable regulatory registration",
+            "dashboard shows unrealistically consistent gains with no losses",
+            "withdrawal requests blocked pending additional 'tax' or 'unlock' payments",
+            "introduced through an online relationship or unsolicited social media contact"
+        ],
+        "source": "RBI and cybercrime cell advisories on fake crypto/trading-app investment fraud (recurring, 2023-2025)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_031",
+        "type": "stock_tips_telegram",
+        "title": "Fake Stock Market 'Tips' Telegram/WhatsApp Group Scam",
+        "script_summary": "Victim is added to a Telegram or WhatsApp group promising guaranteed stock or IPO tips from a 'SEBI-registered' advisor. Group admins showcase fabricated screenshots of past profits and direct members to trade through an unofficial app or transfer funds directly for 'portfolio management'.",
+        "red_flags": [
+            "claims of guaranteed returns or 'sure-shot' stock tips",
+            "SEBI registration claimed but not independently verifiable on SEBI's official registry",
+            "trading conducted through an unofficial app rather than a licensed broker",
+            "screenshots of profit used to pressure members into investing larger sums"
+        ],
+        "source": "SEBI public advisories warning against unregistered advisory groups on social messaging platforms (recurring, 2023-2025)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_032",
+        "type": "fake_ecommerce_refund",
+        "title": "Fake E-commerce Refund/Cashback Scam",
+        "script_summary": "Caller poses as customer support from a known e-commerce platform, claiming a refund or cashback is due for a recent order, and asks the victim to install a remote-access app or share OTP/UPI PIN to 'process' the credit.",
+        "red_flags": [
+            "unsolicited call about a refund the victim did not initiate through the app",
+            "request to install remote-access software to 'receive' the refund",
+            "request for OTP or UPI PIN, which is never required to receive money",
+            "caller claims to be from the platform but calls from a personal mobile number"
+        ],
+        "source": "E-commerce platform and bank fraud-alert advisories on refund-impersonation scams (recurring, 2023-2025)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_033",
+        "type": "fake_fastag_toll",
+        "title": "Fake FASTag/Toll Balance Recharge Scam",
+        "script_summary": "Victim receives an SMS or call claiming their FASTag account is low on balance, deactivated, or under KYC review, with a link to 'recharge' or 'update' that leads to a phishing page requesting bank details and OTP.",
+        "red_flags": [
+            "unsolicited SMS/call about FASTag KYC or balance issues",
+            "link directs to a page mimicking a bank's or NHAI's official portal",
+            "request for OTP or card details to 'complete' a recharge",
+            "urgency framed around being blocked from toll plazas"
+        ],
+        "source": "NHAI and bank advisories on FASTag-recharge phishing patterns (recurring, 2023-2025)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_034",
+        "type": "fake_govt_scheme_subsidy",
+        "title": "Fake Government Scheme/Subsidy Registration Scam",
+        "script_summary": "Victim receives a message about a government welfare scheme (subsidy, pension, or relief payment) requiring 'registration' via a link that requests Aadhaar, bank account details, and OTP to 'process' the disbursement.",
+        "red_flags": [
+            "link directs to a page mimicking a government scheme portal",
+            "request for Aadhaar and bank OTP together to 'register' for a benefit",
+            "scheme name may be real, but the registration channel is unofficial",
+            "urgency framed around a registration deadline"
+        ],
+        "source": "Cybercrime cell advisories on fake government-scheme phishing patterns (recurring, 2023-2025)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_035",
+        "type": "fake_astrologer_extortion",
+        "title": "Fake Astrologer/Godman Extortion Scam",
+        "script_summary": "Victim is approached (often through social media ads) by a self-styled astrologer or spiritual healer promising to resolve a personal or financial problem through rituals, which require escalating payments for 'special items' or 'poojas' before any resolution is claimed.",
+        "red_flags": [
+            "unsolicited contact through social media promising to solve a specific personal problem",
+            "requests for repeated payments for rituals, gemstones, or 'special' items",
+            "claims of a curse or evil eye requiring urgent remedial payment",
+            "no verifiable credentials or physical address for the practitioner"
+        ],
+        "source": "Consumer fraud advisories on astrology/spiritual-service extortion patterns reported in Indian regional media (recurring)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_036",
+        "type": "wfh_data_entry_scam",
+        "title": "Work-From-Home Data Entry / Typing Job Scam",
+        "script_summary": "Victim responds to an ad for a simple work-from-home job (data entry, typing, form-filling) and is asked to pay a 'registration', 'kit', or 'training' fee before receiving any work, after which the recruiter becomes unreachable.",
+        "red_flags": [
+            "any upfront fee required before starting a simple advertised job",
+            "job posted through unofficial channels (WhatsApp, classifieds) rather than verified job portals",
+            "vague company details with no verifiable office address or registration",
+            "recruiter pushes for quick payment via UPI rather than a formal offer letter"
+        ],
+        "source": "Consumer protection and cybercrime advisories on advance-fee work-from-home scams (recurring pattern)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_037",
+        "type": "fake_google_search_customer_care",
+        "title": "Fake Bank/Airline Customer Care Number via Search Engine",
+        "script_summary": "Victim searches online for a bank, airline, or company's customer care number and calls a fraudulent number planted high in search results or on a fake listing. The fraudster then guides the victim through 'verification' steps that lead to OTP theft or remote-access installation.",
+        "red_flags": [
+            "customer care number found via general web search rather than the company's official app or statement",
+            "call handled by someone who quickly asks for OTP, PIN, or remote access",
+            "number not matching the one listed on the company's verified official website",
+            "resolution offered unusually quickly for a complex complaint"
+        ],
+        "source": "Cybercrime cell and bank advisories warning against searching for customer care numbers online (recurring, 2022-2025)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_038",
+        "type": "atm_card_skimming",
+        "title": "ATM Card Skimming/Cloning",
+        "script_summary": "Fraudsters install a hidden skimming device and camera on an ATM to capture card data and PIN entry. The captured data is used to clone the card and withdraw funds, often from a different city, shortly after the victim's legitimate transaction.",
+        "red_flags": [
+            "ATM card slot or keypad appears loose, bulky, or different from usual",
+            "unusual attachment or reflective object near the keypad that could hide a camera",
+            "unexplained withdrawals from distant locations shortly after ATM use",
+            "difficulty inserting or removing the card at the machine"
+        ],
+        "source": "Bank and RBI advisories on ATM skimming prevention (recurring, longstanding pattern)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_039",
+        "type": "fake_traffic_challan",
+        "title": "Fake Traffic Police E-Challan SMS Scam",
+        "script_summary": "Victim receives an SMS claiming a traffic violation e-challan is pending, with a link to 'pay' the fine that leads to a phishing page mimicking the Parivahan or state traffic police portal, capturing card details and OTP.",
+        "red_flags": [
+            "link domain does not match the official parivahan.gov.in or state police portal",
+            "request for full card details and OTP to pay a minor traffic fine",
+            "urgency framed around vehicle registration suspension",
+            "message sent from an unofficial personal or unlisted number"
+        ],
+        "source": "State traffic police and cybercrime advisories on fake e-challan phishing SMS (recurring, 2023-2025)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_040",
+        "type": "digital_arrest_ncb_parcel",
+        "title": "Digital Arrest Variant — NCB Narcotics Parcel Escalation",
+        "script_summary": "Following an initial courier-scam call, the victim is connected to someone claiming to be from the Narcotics Control Bureau, alleging the intercepted parcel contained banned substances, and demanding a 'clearance deposit' held under digital arrest to avoid arrest and media exposure.",
+        "red_flags": [
+            "impersonation of NCB specifically tied to a parcel narrative",
+            "threat of public/media exposure to increase pressure",
+            "demand for a 'clearance deposit' framed as fully refundable",
+            "continuation of the courier-scam escalation pattern into a digital arrest"
+        ],
+        "source": "Consistent with courier-scam escalation pattern reported across multiple 2023-2024 Deccan Herald and police cyber cell cases",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_041",
+        "type": "digital_arrest_whatsapp_summon",
+        "title": "Digital Arrest Variant — Fake CBI Summons via WhatsApp",
+        "script_summary": "Victim receives a WhatsApp message containing a forged CBI or police summons document, instructing them to join a video call within a set time or face immediate arrest, after which the standard digital arrest extortion script follows.",
+        "red_flags": [
+            "official summons delivered via WhatsApp rather than any formal legal channel",
+            "forged letterhead document used to create legitimacy",
+            "compressed deadline to join a video call under threat of arrest",
+            "continuation into standard digital-arrest fund-transfer demands"
+        ],
+        "source": "Synthetic — modeled on the documented digital-arrest pattern with a WhatsApp-delivery variation noted in cybercrime awareness materials",
+        "is_synthetic": true
+    },
+    {
+        "id": "scam_042",
+        "type": "fake_court_summon_post",
+        "title": "Fake Court Summons Delivered by Email or Post",
+        "script_summary": "Victim receives a forged legal notice or summons by email or courier, referencing a fabricated case number, and is instructed to call a number on the document to 'resolve' the matter before a hearing date, leading into the same extortion pattern as digital arrest.",
+        "red_flags": [
+            "legal document received through an unofficial email address rather than a court's e-filing system",
+            "instructs calling a personal mobile number rather than visiting the court in person",
+            "fabricated case number that cannot be verified on official court websites",
+            "leads into demand for money to 'settle' or 'withdraw' the case"
+        ],
+        "source": "Pattern consistent with reported forged-court-order digital arrest cases (2024-2025)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_043",
+        "type": "fake_aadhaar_pan_link_update",
+        "title": "Fake Aadhaar-PAN Linking Update Scam",
+        "script_summary": "Victim receives an SMS or call claiming their PAN card will be deactivated unless Aadhaar linking is 'updated' immediately through a provided link, which captures Aadhaar number, PAN, and OTP on a fraudulent page.",
+        "red_flags": [
+            "urgency around PAN deactivation with a strict deadline",
+            "link domain does not match the official incometax.gov.in or UIDAI portal",
+            "request for OTP alongside Aadhaar and PAN details",
+            "message arrives from an unofficial or masked sender ID"
+        ],
+        "source": "Income Tax Department and UIDAI advisories on Aadhaar-PAN linking phishing patterns (recurring each linking deadline cycle)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_044",
+        "type": "vishing_fake_bank_kyc_call",
+        "title": "Vishing — Fake Bank KYC Verification Call",
+        "script_summary": "Fraudster calls posing as a bank employee, states the account will be suspended unless KYC is verified over the phone, and guides the victim to share OTP, card number, or CVV under the pretext of 'confirming identity'.",
+        "red_flags": [
+            "inbound call claiming to be the bank rather than the victim contacting the bank directly",
+            "request for OTP, CVV, or full card number over a phone call",
+            "urgency around account suspension within hours",
+            "bank staff are never required to ask for OTP or CVV by phone"
+        ],
+        "source": "RBI and bank advisories reiterating banks never ask for OTP/CVV over calls (recurring, longstanding advisory)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_045",
+        "type": "smishing_fake_bank_link",
+        "title": "Smishing — Fake Bank Link SMS",
+        "script_summary": "Victim receives an SMS appearing to be from their bank warning of suspicious activity, containing a link to a phishing page designed to look like the bank's login portal, capturing net-banking credentials and OTP.",
+        "red_flags": [
+            "SMS link domain does not match the bank's official website",
+            "warning of suspicious activity with a link to 'secure' the account",
+            "page requests net-banking username, password, and OTP together",
+            "sender ID is a generic or unofficial short code"
+        ],
+        "source": "Bank and telecom operator advisories on recurring SMS phishing (smishing) campaigns (2022-2025)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_046",
+        "type": "fake_refund_processing_callback",
+        "title": "Fake 'Refund Processing' Callback Scam",
+        "script_summary": "Victim who previously made an online complaint or refund request receives a follow-up call from someone posing as support staff, asking to 'confirm' bank details or install an app to 'process' the refund faster, which instead enables unauthorized withdrawal.",
+        "red_flags": [
+            "unsolicited follow-up call referencing a genuine but unrelated past complaint",
+            "request to install an app or share OTP to 'speed up' a refund",
+            "refund amount and process do not match what the original company confirmed",
+            "caller pressures for immediate action during the call itself"
+        ],
+        "source": "Pattern consistent with broader refund-impersonation scams reported by consumer and bank fraud advisories",
+        "is_synthetic": true
+    },
+    {
+        "id": "scam_047",
+        "type": "fake_matrimonial_visa_fee",
+        "title": "Fake Matrimonial Profile — Advance Visa/Travel Fee Scam",
+        "script_summary": "Fraudster builds trust through a matrimonial site profile claiming to live abroad, then asks the victim to send money for a visa, flight ticket, or travel emergency to finally meet in person, after which contact stops once payment is received.",
+        "red_flags": [
+            "prospective match living abroad who avoids video calls or in-person meeting for a long period",
+            "requests money specifically tied to visa fees, flight tickets, or travel emergencies",
+            "profile details cannot be independently verified through the matrimonial platform's verification tools",
+            "urgency framed around a 'last chance' to finally meet"
+        ],
+        "source": "Consumer fraud advisories on matrimonial-site financial scams (recurring pattern)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_048",
+        "type": "fake_study_abroad_consultant",
+        "title": "Fake Study-Abroad/Education Consultant Scam",
+        "script_summary": "Victim pays a large upfront fee to an unregistered education consultant promising guaranteed university admission or visa approval abroad, after which the consultant becomes unreachable or the promised admission/visa never materializes.",
+        "red_flags": [
+            "guarantee of admission or visa approval, which no legitimate consultant can promise",
+            "large upfront fee demanded before any application is filed",
+            "consultant not listed or verifiable with any recognized regulatory or university body",
+            "pressure to pay quickly to 'lock in' a supposedly limited seat"
+        ],
+        "source": "Consumer protection advisories on education-consultant fraud reported in Indian regional media (recurring pattern)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_049",
+        "type": "fake_property_booking",
+        "title": "Fake Property/Real Estate Booking Scam",
+        "script_summary": "Victim is shown an attractively priced property listing (often for a plot or flat) and asked to pay a 'booking amount' quickly to secure it before a supposed rush of other buyers. The property either does not exist, is already sold, or is not owned by the seller.",
+        "red_flags": [
+            "unusually low price compared to similar listings in the same area",
+            "urgency to pay a booking amount before viewing documents or the property in person",
+            "seller avoids an in-person meeting or site visit",
+            "no verifiable title deed or registration documents provided before payment"
+        ],
+        "source": "Consumer protection and real estate regulatory advisories on booking-fee property fraud (recurring pattern)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_050",
+        "type": "fake_vehicle_insurance_claim",
+        "title": "Fake Vehicle Insurance Claim Settlement Scam",
+        "script_summary": "Caller claims to be from the victim's vehicle insurer, stating a claim can be settled faster or a bonus refunded if the victim shares policy details and pays a small 'processing charge' via UPI, after which the caller disappears.",
+        "red_flags": [
+            "unsolicited call about a claim or bonus the victim did not initiate",
+            "request for a processing charge before any claim is formally reviewed",
+            "payment requested to a personal UPI ID rather than the insurer's official channel",
+            "urgency framed around a limited-time settlement offer"
+        ],
+        "source": "IRDAI advisories on insurance claim-settlement impersonation scams (recurring pattern)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_051",
+        "type": "fake_govt_job_registration_fee",
+        "title": "Fake Government Job Offer — Registration Fee Scam",
+        "script_summary": "Victim receives a message or call offering a government job (railways, police, postal service) contingent on paying a 'registration', 'security deposit', or 'document verification' fee, after which no job materializes.",
+        "red_flags": [
+            "any fee requested for a government job application or offer letter",
+            "offer received via WhatsApp or personal call rather than an official recruitment portal",
+            "urgency to pay before a supposed vacancy closes",
+            "recruiter cannot be verified through the department's official recruitment board"
+        ],
+        "source": "Government recruitment boards and cybercrime advisories on fake job-offer fee scams (recurring pattern)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_052",
+        "type": "fake_charity_disaster_relief",
+        "title": "Fake Charity/Disaster Relief Donation Scam",
+        "script_summary": "Following a real natural disaster or crisis event, fraudsters set up fake fundraising pages or messages soliciting donations, using urgency and emotional appeals, with funds going to personal accounts rather than any verified relief organization.",
+        "red_flags": [
+            "fundraising appeal appears immediately after a disaster with no verifiable registered NGO behind it",
+            "donation requested to a personal UPI ID or account rather than an official relief fund",
+            "emotional imagery used to pressure quick donation without scrutiny",
+            "no transparency on how funds will be used or accounted for"
+        ],
+        "source": "Consumer protection advisories on disaster-relief donation fraud, a recurring pattern after major crisis events",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_053",
+        "type": "missed_call_otp_request",
+        "title": "Missed Call / Call-Back OTP Extraction Scam",
+        "script_summary": "Victim receives a missed call from an international or unknown number and calls back, or receives a call asking them to read out an OTP just received for an unrelated reason, resulting in unauthorized access to an account or service.",
+        "red_flags": [
+            "unsolicited missed call from an unfamiliar or international number",
+            "caller directly asks the victim to read out a code just received via SMS",
+            "no legitimate service ever needs a customer to read an OTP over a call",
+            "call-back to an unknown number can also trigger premium-rate charges"
+        ],
+        "source": "Telecom operator and cybercrime advisories on missed-call and OTP call-back scams (recurring pattern)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_054",
+        "type": "sim_kyc_block_courier_threat",
+        "title": "SIM KYC Block Threat Delivered via Courier Call",
+        "script_summary": "Combines courier and telecom impersonation: caller claims a SIM card registered in the victim's name is linked to a parcel scam case, and the SIM will be blocked unless the victim 'cooperates' by sharing personal and banking details over a video call.",
+        "red_flags": [
+            "combines a fake parcel narrative with a SIM-block threat",
+            "requests banking details framed as necessary to 'verify' SIM ownership",
+            "video call used to add pressure and apparent legitimacy",
+            "threat of SIM deactivation used as the urgency trigger"
+        ],
+        "source": "Synthetic — modeled as a hybrid of the courier-parcel and SIM-related digital arrest patterns documented separately in advisories",
+        "is_synthetic": true
+    },
+    {
+        "id": "scam_055",
+        "type": "digital_arrest_ncb_video_call",
+        "title": "Digital Arrest — NCB Drug Parcel Combined With Live Video Confinement",
+        "script_summary": "Extending the courier-to-NCB escalation, the victim is kept on a continuous video call for several hours while 'investigators' review bank statements shared on screen, before demanding a lump-sum transfer framed as bail or clearance.",
+        "red_flags": [
+            "multi-hour continuous video call confinement",
+            "victim asked to share screen or documents showing full bank balance",
+            "lump-sum demand framed as 'bail' or 'clearance', concepts that do not apply to a phone-based investigation",
+            "no opportunity given to consult a lawyer or family member"
+        ],
+        "source": "Consistent with the multi-stage courier-to-digital-arrest escalation reported across 2023-2025 Indian cybercrime cases",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_056",
+        "type": "fake_cbi_email_attachment",
+        "title": "Fake CBI/Police Email With Malicious Attachment",
+        "script_summary": "Victim receives an email impersonating CBI or police with an attached 'notice' or 'summons' file. Opening the attachment can install malware, or the document itself contains a phishing link requesting personal and banking details.",
+        "red_flags": [
+            "email domain does not match any official government (.gov.in or .nic.in) address",
+            "unexpected attachment claiming to be a legal notice or summons",
+            "document or embedded link requests personal or banking information",
+            "urgent language pressuring the recipient to respond within a short window"
+        ],
+        "source": "Cybercrime advisories on phishing emails impersonating law enforcement (recurring pattern)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_057",
+        "type": "deepfake_video_call_blackmail",
+        "title": "Deepfake/Manipulated Video Call Blackmail",
+        "script_summary": "Fraudster uses a manipulated or deepfake video during a call, or records a brief innocuous video call and later edits it to appear compromising, then threatens to circulate it to the victim's contacts unless a payment is made.",
+        "red_flags": [
+            "unexpected threat to release a video the victim does not recall being compromising",
+            "fraudster is often a stranger who initiated contact shortly before the call",
+            "payment demanded quickly under threat of circulation to family or employer",
+            "difficulty verifying the authenticity of the threatened footage given editing/deepfake tools"
+        ],
+        "source": "Cybercrime advisories highlighting a rise in deepfake-enabled extortion reports (2024-2025)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_058",
+        "type": "ai_voice_clone_relative_distress",
+        "title": "AI Voice Cloning — Fake Distress Call From a Relative",
+        "script_summary": "Fraudster uses AI-generated voice cloning, built from social media audio/video of a family member, to call the victim sounding like their relative in distress (accident, arrest, kidnapping), urgently requesting money be sent immediately.",
+        "red_flags": [
+            "caller sounds like a known relative but call quality or context feels slightly off",
+            "extreme urgency combined with a request to keep the situation secret from other family members",
+            "requests immediate money transfer without allowing time to call the relative back directly",
+            "background noise or scenario designed to prevent calm verification"
+        ],
+        "source": "Cybercrime and consumer advisories flagging emerging AI voice-cloning distress-call scams (2024-2025 reporting)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_059",
+        "type": "fake_ipo_allotment",
+        "title": "Fake IPO Allotment/Pre-Listing Share Scam",
+        "script_summary": "Victim is offered guaranteed allotment of a popular IPO or pre-listing shares of an unlisted company at a discount, through an unofficial broker or Telegram group, after paying upfront — the shares or allotment never materialize.",
+        "red_flags": [
+            "guaranteed IPO allotment, which no broker can legitimately promise",
+            "unlisted 'pre-IPO' shares offered through unofficial channels rather than a registered broker",
+            "upfront payment required before any shares are credited to a demat account",
+            "seller cannot be verified against SEBI's registered intermediary list"
+        ],
+        "source": "SEBI advisories warning against unregistered pre-IPO and grey-market share sale scams (recurring, 2023-2025)",
+        "is_synthetic": false
+    },
+    {
+        "id": "scam_060",
+        "type": "fake_fd_maturity_locker",
+        "title": "Fake Bank FD Maturity / Locker Renewal Scam",
+        "script_summary": "Caller claims the victim's fixed deposit has matured or their bank locker agreement needs urgent renewal, and directs them to share OTP or visit a fake 'digital renewal' link to avoid losing access to funds or locker contents.",
+        "red_flags": [
+            "unsolicited call about FD maturity or locker renewal requiring immediate online action",
+            "request for OTP or net-banking credentials to 'process' renewal",
+            "link provided does not match the bank's official domain",
+            "threat of losing locker access or FD proceeds if action is delayed"
+        ],
+        "source": "Bank fraud-alert bulletins on FD/locker renewal phishing patterns (recurring pattern)",
+        "is_synthetic": true
+    },
+    {
+        "id": "scam_061",
+        "type": "safe_message_otp_real",
+        "title": "Legitimate One-Time Password (OTP) Message (Safe Baseline Example)",
+        "script_summary": "A standard OTP message from a bank or service for a transaction the account holder is actively completing themselves, with a short validity window and an explicit warning never to share the code with anyone — used as a baseline example of legitimate messaging.",
+        "red_flags": [],
+        "source": "Composed for baseline/contrast testing — represents typical legitimate OTP SMS format",
+        "is_synthetic": true
+    },
+    {
+        "id": "scam_062",
+        "type": "safe_message_ecommerce_delivery_otp",
+        "title": "Legitimate E-commerce Delivery OTP Message (Safe Baseline Example)",
+        "script_summary": "A real e-commerce delivery confirmation OTP sent to verify handover of a package the customer actually ordered, with order details matching a purchase the customer recognizes and no request to share the code over a call.",
+        "red_flags": [],
+        "source": "Composed for baseline/contrast testing — represents typical legitimate delivery-OTP SMS format",
+        "is_synthetic": true
+    },
+    {
+        "id": "scam_063",
+        "type": "safe_message_govt_scheme_real",
+        "title": "Legitimate Government Scheme Notification (Safe Baseline Example)",
+        "script_summary": "An authentic SMS from a verified government sender ID informing a beneficiary of a scheme payment already credited, with no link requesting personal or banking information and no request for any action.",
+        "red_flags": [],
+        "source": "Composed for baseline/contrast testing — represents typical legitimate government scheme SMS format",
+        "is_synthetic": true
+    },
+    {
+        "id": "scam_064",
+        "type": "safe_message_bank_callback_real",
+        "title": "Legitimate Bank Callback Confirmation (Safe Baseline Example)",
+        "script_summary": "A message confirming a callback the customer themselves scheduled through the bank's official app or verified helpline, referencing a specific ticket number the customer can independently verify — used as a baseline contrast example.",
+        "red_flags": [],
+        "source": "Composed for baseline/contrast testing — represents typical legitimate customer-service callback format",
+        "is_synthetic": true
+    },
+    {
+        "id": "scam_065",
+        "type": "fake_relative_whatsapp_hi_mom",
+        "title": "'Hi Mom/Dad, New Number' WhatsApp Scam",
+        "script_summary": "Fraudster messages the victim on WhatsApp from an unknown number claiming to be their child or close relative who has lost their old phone, gradually builds trust in conversation, then requests an urgent money transfer for a bill or emergency.",
+        "red_flags": [
+            "message from an unsaved number claiming to be a relative with a 'new number'",
+            "requests to save the new number and communicate only via chat, avoiding a voice call",
+            "eventual request for an urgent money transfer framed as a bill or emergency",
+            "resistance or excuses when asked to do a quick voice or video call to confirm identity"
+        ],
+        "source": "Widely reported 'Hi Mum/Dad' scam pattern flagged by telecom operators and consumer advisories internationally and in India (2023-2025)",
+        "is_synthetic": false
+    }
+]
