@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { analyze, followup } from '../api/client'
+import { analyze, followupStream } from '../api/client'
 
 /**
  * ChatWindow
@@ -49,12 +49,19 @@ const ChatWindow = ({ messages, setMessages, setVerdict, setLoading }) => {
           },
         ])
       } else {
-        // Subsequent messages → follow-up
-        const result = await followup(text, transcriptRef.current)
-        setMessages(prev => [
-          ...prev,
-          { role: 'assistant', text: result.reply },
-        ])
+        // Subsequent messages → follow-up stream
+        setMessages(prev => [...prev, { role: 'assistant', text: '' }])
+        
+        await followupStream(text, transcriptRef.current, messages, (chunk) => {
+          setMessages(prev => {
+            const newMessages = [...prev]
+            newMessages[newMessages.length - 1] = {
+              ...newMessages[newMessages.length - 1],
+              text: newMessages[newMessages.length - 1].text + chunk
+            }
+            return newMessages
+          })
+        })
       }
     } catch (err) {
       setError(err.message)

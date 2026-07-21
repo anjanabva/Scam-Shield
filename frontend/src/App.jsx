@@ -16,7 +16,7 @@ const App = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white flex flex-col">
+    <div className="min-h-screen md:h-screen md:overflow-hidden bg-gray-950 text-white flex flex-col">
 
       {/* ── Header ── */}
       <header className="border-b border-gray-800 px-6 py-4 flex items-center gap-3">
@@ -40,7 +40,7 @@ const App = () => {
       </header>
 
       {/* ── Main layout ── */}
-      <main className="flex-1 flex flex-col md:flex-row gap-4 p-4 max-w-6xl mx-auto w-full">
+      <main className="flex-1 flex flex-col md:flex-row gap-4 p-4 max-w-6xl mx-auto w-full md:overflow-hidden">
 
         {/* Left — Chat */}
         <section className="flex-1 flex flex-col min-h-[60vh] md:min-h-0">

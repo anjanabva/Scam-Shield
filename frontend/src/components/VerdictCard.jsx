@@ -48,7 +48,7 @@ const Skeleton = () => (
 )
 
 const VerdictCard = ({ verdict, loading }) => {
-  if (loading) {
+  if (loading && !verdict) {
     return (
       <div className="rounded-xl border border-gray-700 bg-gray-900 p-5">
         <p className="text-xs text-gray-500 mb-3 font-medium uppercase tracking-widest">

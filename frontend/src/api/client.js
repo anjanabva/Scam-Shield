@@ -26,17 +26,29 @@ export async function analyze(text) {
  * @param {string} context   – original transcript that was analyzed
  * @returns {Promise<{reply:string}>}
  */
-export async function followup(question, context) {
+export async function followupStream(question, context, history = [], onChunk) {
   const res = await fetch(`${BASE}/followup`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ question, context }),
+    body: JSON.stringify({ question, context, history }),
   })
+  
   if (!res.ok) {
     const err = await res.text()
     throw new Error(`followup failed (${res.status}): ${err}`)
   }
-  return res.json()
+
+  const reader = res.body.getReader()
+  const decoder = new TextDecoder('utf-8')
+  let done = false
+
+  while (!done) {
+    const { value, done: readerDone } = await reader.read()
+    done = readerDone
+    if (value) {
+      onChunk(decoder.decode(value, { stream: true }))
+    }
+  }
 }
 
 /**
