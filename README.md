@@ -141,7 +141,7 @@ scam-shield/
 
 ### 1. Clone the repository
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/anjanabva/Scam-Shield.git
 cd scam-shield
 ```
 
@@ -150,16 +150,15 @@ Navigate to the backend directory and install dependencies:
 ```bash
 cd backend
 python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+venv\Scripts\activate   # On Linux use `source venv/bin/activate`
 pip install -r requirements.txt
 ```
 
 Set up your environment variables by creating a `.env` file in the `backend/` directory:
 ```env
-# Example .env
 OPENAI_API_KEY=your_openai_api_key_here
 PINECONE_API_KEY=your_pinecone_api_key_here
-# Add any other required environment variables
+PINECONE_INDEX_NAME=pinecone_index_name_here
 ```
 
 Run the FastAPI server:
