@@ -80,32 +80,53 @@ graph TD
 
 ```text
 scam-shield/
-├── backend/                  # FastAPI Backend Application
-│   ├── api/                  # API endpoints and routes (routes.py)
-│   ├── data/                 # Raw data / Knowledge base files for RAG
-│   ├── detection/            # Scam classification logic, rules, and prompts
-│   ├── intelligence/         # Clustering & trending campaign detection
-│   ├── llm/                  # OpenAI client wrappers
-│   ├── rag/                  # RAG ingestion and vectorstore queries
-│   ├── tests/                # Unit and integration tests
-│   ├── main.py               # FastAPI application entry point
-│   └── requirements.txt      # Python dependencies
-│
-├── frontend/                 # React Frontend Application
-│   ├── public/               # Static assets
-│   ├── src/                  # React source code
-│   │   ├── api/              # API client for communicating with backend
-│   │   ├── assets/           # UI assets, images, etc.
-│   │   ├── components/       # Reusable React components (ChatWindow, VerdictCard, etc.)
-│   │   ├── App.jsx           # Main application layout
-│   │   ├── index.css         # Tailwind and custom CSS
-│   │   └── main.jsx          # React DOM mounting point
-│   ├── package.json          # Node.js dependencies
-│   ├── vite.config.js        # Vite bundler configuration
-│   └── eslint.config.js      # Linting setup
-│
-├── .gitignore                # Git ignore rules
-└── README.md                 # Project documentation
+├── backend/
+│   ├── .env.example
+│   ├── api/
+│   │   └── routes.py
+│   ├── config.py
+│   ├── data/
+│   │   └── scam_corpus.json
+│   ├── detection/
+│   │   ├── classifier.py
+│   │   ├── prompts.py
+│   │   └── rules.py
+│   ├── intelligence/
+│   │   ├── campaign_log.py
+│   │   └── clustering.py
+│   ├── llm/
+│   │   └── openai_client.py
+│   ├── main.py
+│   ├── rag/
+│   │   ├── ingest.py
+│   │   └── vectorstore.py
+│   ├── requirements.txt
+│   └── tests/
+│       ├── test_campaign_log.py
+│       ├── test_classifier.py
+│       ├── test_clustering.py
+│       ├── test_openai_client.py
+│       ├── test_pinecone.py
+│       └── test_rules.py
+├── frontend/
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── src/
+│   │   ├── App.jsx
+│   │   ├── api/
+│   │   │   └── client.js
+│   │   ├── components/
+│   │   │   ├── ActionButtons.jsx
+│   │   │   ├── ChatWindow.jsx
+│   │   │   ├── TrendingPanel.jsx
+│   │   │   └── VerdictCard.jsx
+│   │   ├── index.css
+│   │   └── main.jsx
+│   └── vite.config.js
+├── .gitignore
+└── README.md
 ```
 
 ---
