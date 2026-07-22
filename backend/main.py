@@ -14,7 +14,11 @@ app = FastAPI(
 # Configure CORS for the frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, specify the actual frontend domain
+    allow_origins=[
+        "http://localhost:5173",
+        "https://scamshield.vercel.app",
+        "https://scamshield.vercel.app/"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
