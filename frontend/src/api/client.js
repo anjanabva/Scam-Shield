@@ -1,6 +1,6 @@
 // client.js — thin API wrapper; all paths are relative (Vite proxy → FastAPI)
 
-const BASE = '/api'
+const BASE = import.meta.env.VITE_API_URL || '/api'
 
 /**
  * POST /api/analyze
