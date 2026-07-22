@@ -1,3 +1,4 @@
+import asyncio
 import json
 import logging
 from typing import Dict, Any
@@ -6,6 +7,7 @@ from detection.rules import evaluate_rules
 from detection.prompts import SYSTEM_PROMPT, build_user_prompt, FOLLOWUP_SYSTEM_PROMPT, build_followup_prompt
 from llm.openai_client import get_llm_response, get_embedding, stream_llm_response
 from rag.vectorstore import search_similar
+from intelligence.campaign_log import log_submission
 
 logger = logging.getLogger("classifier")
 
@@ -90,6 +92,11 @@ async def analyze_text(text: str) -> Dict[str, Any]:
         
         # Inject our deterministic flags into the final output
         verdict_data["red_flags"] = triggered_flags
+
+        # Fire-and-forget: log anonymized submission to Pinecone for campaign clustering
+        # Only log threat-level verdicts — SAFE submissions would pollute clustering
+        if verdict_data.get("verdict") in ("SCAM", "SUSPICIOUS"):
+            asyncio.ensure_future(log_submission(text, verdict_data))
         
         return verdict_data
         

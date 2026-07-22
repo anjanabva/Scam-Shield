@@ -1,5 +1,5 @@
 from typing import Optional
-from fastapi import APIRouter
+from fastapi import APIRouter, Query
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 
@@ -44,3 +44,26 @@ async def followup(request: FollowupRequest):
         ),
         media_type="text/event-stream"
     )
+
+@router.get("/trending")
+async def trending_campaigns(
+    window_hours: float = Query(default=24.0, ge=1.0, le=168.0,
+                                description="Look-back window in hours (1–168)"),
+    min_cluster_size: int  = Query(default=2, ge=2, le=20,
+                                   description="Minimum submissions to count as a campaign"),
+):
+    """
+    Returns active emerging scam campaigns detected by cross-user similarity
+    clustering of recent submissions in the campaign_submissions namespace.
+    """
+    from intelligence.clustering import get_trending_campaigns
+
+    # get_trending_campaigns is synchronous (Pinecone SDK is sync);
+    # run it in the thread pool so we don't block the event loop.
+    from fastapi.concurrency import run_in_threadpool
+    campaigns = await run_in_threadpool(
+        get_trending_campaigns,
+        window_hours=window_hours,
+        min_cluster_size=min_cluster_size,
+    )
+    return {"campaigns": campaigns, "total": len(campaigns)}

@@ -58,3 +58,15 @@ export async function healthCheck() {
   const res = await fetch(`${BASE}/health`)
   return res.ok
 }
+
+/**
+ * GET /api/trending
+ * @returns {Promise<{campaigns: Array, total: number}>}
+ */
+export async function getTrending() {
+  const res = await fetch(`${BASE}/trending`)
+  if (!res.ok) {
+    throw new Error(`getTrending failed: ${res.status}`)
+  }
+  return res.json()
+}

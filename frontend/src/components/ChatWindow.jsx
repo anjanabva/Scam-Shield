@@ -51,7 +51,7 @@ const ChatWindow = ({ messages, setMessages, setVerdict, setLoading }) => {
       } else {
         // Subsequent messages → follow-up stream
         setMessages(prev => [...prev, { role: 'assistant', text: '' }])
-        
+
         await followupStream(text, transcriptRef.current, messages, (chunk) => {
           setMessages(prev => {
             const newMessages = [...prev]
@@ -69,7 +69,7 @@ const ChatWindow = ({ messages, setMessages, setVerdict, setLoading }) => {
         ...prev,
         {
           role: 'assistant',
-          text: '⚠️ Could not reach the backend. Make sure the FastAPI server is running.',
+          text: 'Could not reach the backend. Make sure the FastAPI server is running.',
         },
       ])
     } finally {
@@ -85,13 +85,15 @@ const ChatWindow = ({ messages, setMessages, setVerdict, setLoading }) => {
   }
 
   return (
-    <div className="flex flex-col flex-1 rounded-xl border border-gray-800 bg-gray-900 overflow-hidden">
+    <div className="flex flex-col flex-1 rounded-xl glass-panel overflow-hidden">
 
       {/* ── Message list ── */}
       <div className="flex-1 overflow-y-auto p-4 space-y-3 min-h-0">
         {messages.length === 0 && (
           <div className="flex flex-col items-center justify-center h-full gap-3 text-center py-12">
-            <span className="text-5xl">🛡️</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-16 h-16 text-indigo-500/80 mb-2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+            </svg>
             <p className="text-gray-400 text-sm max-w-xs leading-relaxed">
               Paste a call transcript, WhatsApp message, or suspicious email below.
               <br />
@@ -109,8 +111,8 @@ const ChatWindow = ({ messages, setMessages, setVerdict, setLoading }) => {
               className={`
                 max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed whitespace-pre-wrap
                 ${msg.role === 'user'
-                  ? 'bg-indigo-600 text-white rounded-br-sm'
-                  : 'bg-gray-800 text-gray-100 rounded-bl-sm border border-gray-700'
+                  ? 'bg-indigo-600/90 text-white rounded-br-sm shadow-[0_4px_12px_rgba(79,70,229,0.2)] border border-indigo-500/50'
+                  : 'glass-input text-gray-100 rounded-bl-sm'
                 }
               `}
             >
@@ -143,10 +145,9 @@ const ChatWindow = ({ messages, setMessages, setVerdict, setLoading }) => {
               : 'Ask a follow-up question…'
           }
           className="
-            flex-1 resize-none rounded-xl bg-gray-800 border border-gray-700
+            flex-1 resize-none rounded-xl glass-input
             text-gray-100 placeholder-gray-500 text-sm px-4 py-3
-            focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500
-            transition-colors
+            focus:outline-none transition-colors
           "
         />
         <button
