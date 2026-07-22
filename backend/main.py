@@ -16,8 +16,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "https://scamshield.vercel.app",
-        "https://scamshield.vercel.app/"
+        "https://scam-shield-cyan.vercel.app",
+        "https://scam-shield-cyan.vercel.app/"
     ],
     allow_credentials=True,
     allow_methods=["*"],
